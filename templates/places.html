@@ -1,0 +1,22 @@
+<div class="border-bottom row" style = "margin-bottom: 16px; padding-bottom: 8px;">
+
+<div class = "col-9">
+  <h4 style = "color: rgb(194,151,99); margin-bottom:4px;">
+  {{place['name']}}
+  </h4>
+  
+  <div><b>Location: </b> {{place['location']}}</div>
+  
+  {% if 'price_range' in place %}
+  <div><b>RM Range: </b> {{place['price_range']}} </div>
+  {% endif %}
+
+</div>
+
+<div class = "col-3">
+  <button type="button" class="btn btn-outline-primary" style="background-color: rgb(190, 111, 55); color: white; border-color: rgb(247, 216, 171);">View Here</button></div>
+
+</div>
+
+<!--space outide is margin  -->
+<!--space inside is padding  -->
