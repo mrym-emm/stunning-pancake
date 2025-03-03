@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 # an app is simply an object of the class Flask
 app = Flask(__name__)
@@ -9,18 +9,21 @@ PLACES = [
   {'id': 1,
    'name': "The Nook",
    'location': "Tamarind Square",
-   'price_range': "RM10"
+   'price_range': "RM10",
+   "url" : "https://www.instagram.com/thenook.tamarind/"
   },
 
   {'id': 2,
    'name': "Soufflé Dessert Cafe",
    'location': "Damansara Utama",
-   'price_range': "RM18"
+   'price_range': "RM18",
+   'url': "https://www.instagram.com/souffledessertcafe/?hl=en"
   },
 
   {'id': 3,
    'name': "Flufff",
-   'location': "Ipoh"
+   'location': "Ipoh",
+   'url': 'https://www.instagram.com/flufffcafe/?hl=en'
   }
 ]
 
@@ -40,6 +43,11 @@ def hello_pancakes():
 #     return "Hello, mrym!"
 # def add_numbers():
 #   return str(1+2) # can only be strings apparently
+
+# instead of returning html, we can also return api
+@app.route("/api/places")
+def list_places():
+  return jsonify(PLACES)
 
 
 # to run website
